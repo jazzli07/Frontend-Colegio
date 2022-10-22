@@ -1,12 +1,11 @@
-
 <div class="list row">
     <div class="col-md-8">
       <div class="input-group mb-3">
         <input
           type="text"
           class="form-control"
-          placeholder="Buescando por el nombre"
-          [(ngModel)]="nombre"
+          placeholder="Buscando por los Nombres"
+          [(ngModel)]="nombres"
         />
         <div class="input-group-append">
           <button
@@ -19,29 +18,27 @@
       </div>
     </div>
     <div class="col-md-6">
-      <h4>Roles List</h4>
+      <h4>Personas List</h4>
       <ul class="list-group">
         <li
           class="list-group-item"
-          *ngFor="let roles of roles; let i = index"
+          *ngFor="let personas of personas; let i = index"
           [class.active]="i == currentIndex"
-          (click)="setActiveRoles(roles, i)"
+          (click)="setActivePersonas(personas, i)"
         >
-          {{ roles.nombre }}
+          {{ personas.nombres }}
         </li>
       </ul>
   
-      <button class="m-3 btn btn-sm btn-danger" (click)="removeAllRoles()">
+      <button class="m-3 btn btn-sm btn-danger" (click)="removeAllPersonas()">
         Remove All
       </button>
     </div>
     <div class="col-md-6">
-      <app-roles-details
+      <app-personas-details
         [viewMode]="true"
-        [currentRol]="currentRol"
-      ></app-roles-details>
+        [currentPersona]="currentPersona"
+      ></app-personas-details>
     </div>
   </div>
-
-
   

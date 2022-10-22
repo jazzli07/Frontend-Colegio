@@ -1,0 +1,24 @@
+<div>
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nombre"
+            required
+            [(ngModel)]="tiposdecontactos.nombre"
+            name="nombre"
+          />
+        </div>
+  
+        <button (click)="saveTiposC()" class="btn btn-success">Guardar</button>
+      </div>
+  
+      <div *ngIf="submitted">
+        <h4>Tipo de Contacto se ha guardado exitosamente!</h4>
+        <button class="btn btn-success" (click)="newTipoC()">Add</button>
+      </div>
+    </div>
+  </div>

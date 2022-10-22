@@ -1,0 +1,57 @@
+<div *ngIf="viewMode; else editable">
+    <div *ngIf="currentTipoC.id_tipoc">
+      <h4>Tipo de Contacto</h4>
+      <div>
+        <label><strong>Nombre:</strong></label> {{ currentTipoC.nombre }}
+      </div>
+      <a
+        class="badge badge-warning"
+        routerLink="/tipo_contacto/{{ currentTipoC.id_tipoc }}"
+      >
+        Edit
+      </a>
+    </div>
+  
+    <div *ngIf="!currentTipoC">
+      <br />
+      <p>Please click on a Tipo de Contacto..</p>
+    </div>
+  </div>
+  
+  <ng-template #editable>
+    <div *ngIf="currentTipoC.id_tipoc" class="edit-form">
+      <h4>Tipo de Contacto</h4>
+      <form>
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nombre"
+            [(ngModel)]="currentTipoC.nombre"
+            name="nombre"
+          />
+        </div>
+
+      </form>
+  
+      <button class="badge badge-danger mr-2" (click)="deleteTipoC()">
+        Delete
+      </button>
+  
+      <button
+        type="submit"
+        class="badge badge-success mb-2"
+        (click)="updateTipoC()"
+      >
+        Update
+      </button>
+      <p>{{ message }}</p>
+    </div>
+  
+    <div *ngIf="!currentTipoC.id_tipoc">
+      <br />
+      <p>Cannot access this Tipo de Contacto..</p>
+    </div>
+  </ng-template>
+

@@ -1,5 +1,5 @@
 export class Personas {
-    id?: any;
+    id_persona?: any;
     cui?: string;
     correo?: string;
     nombres?: string;

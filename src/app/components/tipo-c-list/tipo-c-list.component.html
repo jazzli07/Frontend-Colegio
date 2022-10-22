@@ -1,11 +1,10 @@
-
 <div class="list row">
     <div class="col-md-8">
       <div class="input-group mb-3">
         <input
           type="text"
           class="form-control"
-          placeholder="Buescando por el nombre"
+          placeholder="Buscando por el nombre"
           [(ngModel)]="nombre"
         />
         <div class="input-group-append">
@@ -19,29 +18,27 @@
       </div>
     </div>
     <div class="col-md-6">
-      <h4>Roles List</h4>
+      <h4>Tipos de Contactos List</h4>
       <ul class="list-group">
         <li
           class="list-group-item"
-          *ngFor="let roles of roles; let i = index"
+          *ngFor="let tipoc of TipoC; let i = index"
           [class.active]="i == currentIndex"
-          (click)="setActiveRoles(roles, i)"
+          (click)="setActiveTipoC(tipoc, i)"
         >
-          {{ roles.nombre }}
+          {{ tipoc.nombre }}
         </li>
       </ul>
   
-      <button class="m-3 btn btn-sm btn-danger" (click)="removeAllRoles()">
+      <button class="m-3 btn btn-sm btn-danger" (click)="removeAllTipoC()">
         Remove All
       </button>
     </div>
     <div class="col-md-6">
-      <app-roles-details
+      <app-tipo-c-details
         [viewMode]="true"
-        [currentRol]="currentRol"
-      ></app-roles-details>
+        [currentTipoC]="currentTipoC"
+      ></app-tipo-c-details>
     </div>
   </div>
 
-
-  

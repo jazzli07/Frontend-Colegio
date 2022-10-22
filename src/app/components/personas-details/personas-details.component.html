@@ -1,0 +1,226 @@
+<div *ngIf="viewMode; else editable">
+    <div *ngIf="currentPersona.id_persona">
+      <h4>Personas</h4>
+      <div>
+        <label><strong>Cui:</strong></label> {{ currentPersona.cui }}
+      </div>
+      <div>
+        <label><strong>Nombres:</strong></label>
+        {{ currentPersona.nombres }}
+      </div>
+      <div>
+        <label><strong>Apellidos:</strong></label>
+        {{ currentPersona.apellidos }}
+      </div>
+      <div>
+        <label><strong>Nombre Completo:</strong></label>
+        {{ currentPersona.nombreCompleto }}
+      </div>
+      <div>
+        <label><strong>Genero:</strong></label>
+        {{ currentPersona.genero }}
+      </div>
+      <div>
+        <label><strong>Fecha Nacimiento:</strong></label>
+        {{ currentPersona.fechaNacimiento }}
+      </div>
+      <div>
+        <label><strong>Edad:</strong></label>
+        {{ currentPersona.edad }}
+      </div>
+      <div>
+        <label><strong>Direccion:</strong></label>
+        {{ currentPersona.direccion }}
+      </div>
+      <div>
+        <label><strong>Esta Activo:</strong></label>
+        {{ currentPersona.esta_activo }}
+      </div>
+  
+      <a
+        class="badge badge-warning"
+        routerLink="/personas/{{ currentPersona.id_persona}}"
+      >
+        Edit
+      </a>
+    </div>
+  
+    <div *ngIf="!currentPersona">
+      <br />
+      <p>Please click on a Persona...</p>
+    </div>
+  </div>
+  
+  <ng-template #editable>
+    <div *ngIf="currentPersona.id_persona" class="edit-form">
+      <h4>Persona</h4>
+      <form>
+        <div class="form-group">
+          <label for="cui">Cui</label>
+          <input
+            type="text"
+            class="form-control"
+            id="cui"
+            [(ngModel)]="currentPersona.cui"
+            name="cui"
+          />
+        </div>
+      
+        <ng-template #editable>
+            <div *ngIf="currentPersona.id_persona" class="edit-form">
+              <h4>Correo</h4>
+              <form>
+                <div class="form-group">
+                  <label for="correo">Correo</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="correo"
+                    [(ngModel)]="currentPersona.correo"
+                    name="correo"
+                  />
+                </div>
+
+                <ng-template #editable>
+                    <div *ngIf="currentPersona.id_persona" class="edit-form">
+                      <h4>Nombres</h4>
+                      <form>
+                        <div class="form-group">
+                          <label for="nombres">Nombres</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="nombres"
+                            [(ngModel)]="currentPersona.nombres"
+                            name="nombres"
+                          />
+                        </div>
+
+                        <ng-template #editable>
+                            <div *ngIf="currentPersona.id_persona" class="edit-form">
+                              <h4>Apellidos</h4>
+                              <form>
+                                <div class="form-group">
+                                  <label for="apellidos">Apellidos</label>
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="apellidos"
+                                    [(ngModel)]="currentPersona.apellidos"
+                                    name="apellidos"
+                                  />
+                                </div>
+
+                    
+                                <ng-template #editable>
+                                    <div *ngIf="currentPersona.id_persona" class="edit-form">
+                                      <h4>Nombre Completo</h4>
+                                      <form>
+                                        <div class="form-group">
+                                          <label for="nombreCompleto">Nombre Completo</label>
+                                          <input
+                                            type="text"
+                                            class="form-control"
+                                            id="nombreCompleto"
+                                            [(ngModel)]="currentPersona.nombreCompleto"
+                                            name="nombreCompleto"
+                                          />
+                                        </div>
+
+                                        <ng-template #editable>
+                                            <div *ngIf="currentPersona.id_persona" class="edit-form">
+                                              <h4>Genero</h4>
+                                              <form>
+                                                <div class="form-group">
+                                                  <label for="genero">Genero</label>
+                                                  <input
+                                                    type="text"
+                                                    class="form-control"
+                                                    id="genero"
+                                                    [(ngModel)]="currentPersona.genero"
+                                                    name="genero"
+                                                  />
+                                                </div>
+
+                                                <ng-template #editable>
+                                                    <div *ngIf="currentPersona.id_persona" class="edit-form">
+                                                      <h4>Fecha Nacimiento</h4>
+                                                      <form>
+                                                        <div class="form-group">
+                                                          <label for="fechaNacimiento">Fecha Nacimiento</label>
+                                                          <input
+                                                            type="text"
+                                                            class="form-control"
+                                                            id="fechaNacimiento"
+                                                            [(ngModel)]="currentPersona.fechaNacimiento"
+                                                            name="fechaNacimiento"
+                                                          />
+                                                        </div>
+
+                                                        <ng-template #editable>
+                                                            <div *ngIf="currentPersona.id_persona" class="edit-form">
+                                                              <h4>Edad</h4>
+                                                              <form>
+                                                                <div class="form-group">
+                                                                  <label for="edad">edad</label>
+                                                                  <input
+                                                                    type="text"
+                                                                    class="form-control"
+                                                                    id="edad"
+                                                                    [(ngModel)]="currentPersona.edad"
+                                                                    name="edad"
+                                                                  />
+                                                                </div>
+
+                                                                <ng-template #editable>
+                                                                    <div *ngIf="currentPersona.id_persona" class="edit-form">
+                                                                      <h4>Direccion</h4>
+                                                                      <form>
+                                                                        <div class="form-group">
+                                                                          <label for="direccion">Direccion</label>
+                                                                          <input
+                                                                            type="text"
+                                                                            class="form-control"
+                                                                            id="direccion"
+                                                                            [(ngModel)]="currentPersona.direccion"
+                                                                            name="direccion"
+                                                                          />
+                                                                        </div>
+
+                                                                        <ng-template #editable>
+                                                                            <div *ngIf="currentPersona.id_persona" class="edit-form">
+                                                                              <h4>Esta Activo</h4>
+                                                                              <form>
+                                                                                <div class="form-group">
+                                                                                  <label for="esta_activo">esta_activo</label>
+                                                                                  <input
+                                                                                    type="text"
+                                                                                    class="form-control"
+                                                                                    id="esta_activo"
+                                                                                    [(ngModel)]="currentPersona.esta_activo"
+                                                                                    name="esta_activo"
+                                                                                  />
+                                                                                </div>
+
+      </form>
+  
+      <button class="badge badge-danger mr-2" (click)="deletePersona()">
+        Delete
+      </button>
+  
+      <button
+        type="submit"
+        class="badge badge-success mb-2"
+        (click)="updatePersonas()"
+      >
+        Update
+      </button>
+      <p>{{ message }}</p>
+    </div>
+  
+    <div *ngIf="!currentPersona.id_persona">
+      <br />
+      <p>Cannot access this Persona..</p>
+    </div>
+  </ng-template>
+

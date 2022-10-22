@@ -16,6 +16,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { AddPersonasComponent } from './components/add-personas/add-personas.component';
+import { PersonasDetailsComponent } from './components/personas-details/personas-details.component';
+import { PersonasListComponent } from './components/personas-list/personas-list.component';
+import { AddTipoDeContactoComponent } from './components/add-tipo-de-contacto/add-tipo-de-contacto.component';
+import { TipoCDetailsComponent } from './components/tipo-c-details/tipo-c-details.component';
+import { TipoCListComponent } from './components/tipo-c-list/tipo-c-list.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +29,13 @@ import { MatListModule } from '@angular/material/list';
     AddRolesComponent,
     RolesListComponent,
     RolesDetailsComponent,
-    BarraLateralComponent
+    BarraLateralComponent,
+    AddPersonasComponent,
+    PersonasDetailsComponent,
+    PersonasListComponent,
+    AddTipoDeContactoComponent,
+    TipoCDetailsComponent,
+    TipoCListComponent
   ],
   imports: [
     BrowserModule,
