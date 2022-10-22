@@ -1,0 +1,26 @@
+<div>
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="grupo">Grupo</label>
+          <input
+            type="text"
+            class="form-control"
+            id="grupo"
+            required
+            [(ngModel)]="grupos.grupo"
+            name="grupo"
+          />
+        </div>
+
+
+        <button (click)="saveGrupo()" class="btn btn-success">Guardar</button>
+      </div>
+  
+      <div *ngIf="submitted">
+        <h4>El grupo se ha guardado exitosamente!</h4>
+        <button class="btn btn-success" (click)="newGrupo()">Add</button>
+      </div>
+    </div>
+  </div>
+  

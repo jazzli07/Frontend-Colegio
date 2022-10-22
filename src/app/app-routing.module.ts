@@ -12,6 +12,10 @@ import { AddTipoDeContactoComponent } from './components/add-tipo-de-contacto/ad
 import { TipoCListComponent } from './components/tipo-c-list/tipo-c-list.component';
 import { TipoCDetailsComponent } from './components/tipo-c-details/tipo-c-details.component';
 
+import { AddGruposComponent } from './components/add-grupos/add-grupos.component';
+import { GruposListComponent } from './components/grupos-list/grupos-list.component';
+import { GruposDetailsComponent } from './components/grupos-details/grupos-details.component';
+
 const routes: Routes = [
   { path: '', redirectTo: 'roles', pathMatch: 'full' },
   { path: 'roles', component: RolesListComponent },
@@ -26,7 +30,12 @@ const routes: Routes = [
   { path: '', redirectTo: 'tipoC', pathMatch: 'full' },
   { path: 'tipoC', component: TipoCListComponent },
   { path: 'tipoC/:id', component: TipoCDetailsComponent },
-  { path: 'add_tipoC', component: AddTipoDeContactoComponent }
+  { path: 'add_tipoC', component: AddTipoDeContactoComponent },
+
+  { path: '', redirectTo: 'grupos', pathMatch: 'full' },
+  { path: 'grupos', component: GruposListComponent },
+  { path: 'grupos/:id', component: GruposDetailsComponent },
+  { path: 'add_grupo', component: AddGruposComponent }
 
 ];
 

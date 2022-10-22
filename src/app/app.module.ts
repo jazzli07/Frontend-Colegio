@@ -22,6 +22,9 @@ import { PersonasListComponent } from './components/personas-list/personas-list.
 import { AddTipoDeContactoComponent } from './components/add-tipo-de-contacto/add-tipo-de-contacto.component';
 import { TipoCDetailsComponent } from './components/tipo-c-details/tipo-c-details.component';
 import { TipoCListComponent } from './components/tipo-c-list/tipo-c-list.component';
+import { AddGruposComponent } from './components/add-grupos/add-grupos.component';
+import { GruposDetailsComponent } from './components/grupos-details/grupos-details.component';
+import { GruposListComponent } from './components/grupos-list/grupos-list.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { TipoCListComponent } from './components/tipo-c-list/tipo-c-list.compone
     PersonasListComponent,
     AddTipoDeContactoComponent,
     TipoCDetailsComponent,
-    TipoCListComponent
+    TipoCListComponent,
+    AddGruposComponent,
+    GruposDetailsComponent,
+    GruposListComponent
   ],
   imports: [
     BrowserModule,

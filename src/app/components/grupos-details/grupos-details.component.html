@@ -1,0 +1,57 @@
+<div *ngIf="viewMode; else editable">
+    <div *ngIf="currentGrupo.id_grupo">
+      <h4>Grupos</h4>
+      <div>
+        <label><strong>Nombre:</strong></label> {{ currentGrupo.grupo }}
+      </div>
+  
+      <a
+        class="badge badge-warning"
+        routerLink="/grupos/{{ currentGrupo.id_grupo }}"
+      >
+        Edit
+      </a>
+    </div>
+  
+    <div *ngIf="!currentGrupo">
+      <br />
+      <p>Please click on a Grupo...</p>
+    </div>
+  </div>
+  
+  <ng-template #editable>
+    <div *ngIf="currentGrupo.id_grupo" class="edit-form">
+      <h4>Grupos</h4>
+      <form>
+        <div class="form-group">
+          <label for="grupo">Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            id="grupo"
+            [(ngModel)]="currentGrupo.grupo"
+            name="grupo"
+          />
+        </div>
+      </form>
+  
+      <button class="badge badge-danger mr-2" (click)="deleteGrupos()">
+        Delete
+      </button>
+  
+      <button
+        type="submit"
+        class="badge badge-success mb-2"
+        (click)="updateGrupos()"
+      >
+        Update
+      </button>
+      <p>{{ message }}</p>
+    </div>
+  
+    <div *ngIf="!currentGrupo.id_grupo">
+      <br />
+      <p>Cannot access this Grupos...</p>
+    </div>
+  </ng-template>
+

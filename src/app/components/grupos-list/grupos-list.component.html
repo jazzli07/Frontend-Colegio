@@ -1,0 +1,41 @@
+<div class="list row">
+    <div class="col-md-8">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Buscando por el nombre"
+          [(ngModel)]="grupo"
+        />
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-secondary"
+            (click)="searchNombre()"
+          >
+            Buscar
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h4>Grupo Lista</h4>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let grupos of grupos; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setActiveGrupos(grupos, i)"
+        >
+          {{ grupos.grupo }}
+        </li>
+      </ul>
+
+    </div>
+    <div class="col-md-6">
+      <app-grupos-details
+        [viewMode]="true"
+        [currentGrupo]="currentGrupo"
+      ></app-grupos-details>
+    </div>
+  </div>
+
