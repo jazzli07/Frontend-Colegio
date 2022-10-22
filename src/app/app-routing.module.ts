@@ -16,6 +16,10 @@ import { AddGruposComponent } from './components/add-grupos/add-grupos.component
 import { GruposListComponent } from './components/grupos-list/grupos-list.component';
 import { GruposDetailsComponent } from './components/grupos-details/grupos-details.component';
 
+import { AddcursosComponent } from './components/add-cursos/add-cursos.component';
+import { CursosListComponent } from './components/cursos-list/cursos-list.component';
+import { CursosDetailsComponent } from './components/cursos-details/cursos-details.component';
+
 const routes: Routes = [
   { path: '', redirectTo: 'roles', pathMatch: 'full' },
   { path: 'roles', component: RolesListComponent },
@@ -35,7 +39,12 @@ const routes: Routes = [
   { path: '', redirectTo: 'grupos', pathMatch: 'full' },
   { path: 'grupos', component: GruposListComponent },
   { path: 'grupos/:id', component: GruposDetailsComponent },
-  { path: 'add_grupo', component: AddGruposComponent }
+  { path: 'add_grupo', component: AddGruposComponent },
+
+  { path: '', redirectTo: 'cursos', pathMatch: 'full' },
+  { path: 'cursos', component: CursosListComponent },
+  { path: 'cursos/:id', component: CursosDetailsComponent },
+  { path: 'add_curso', component: AddcursosComponent }
 
 ];
 

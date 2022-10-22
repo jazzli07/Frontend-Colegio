@@ -26,6 +26,10 @@ import { AddGruposComponent } from './components/add-grupos/add-grupos.component
 import { GruposDetailsComponent } from './components/grupos-details/grupos-details.component';
 import { GruposListComponent } from './components/grupos-list/grupos-list.component';
 
+import { AddcursosComponent } from './components/add-cursos/add-cursos.component';
+import { CursosDetailsComponent } from './components/cursos-details/cursos-details.component';
+import { CursosListComponent } from './components/cursos-list/cursos-list.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +45,10 @@ import { GruposListComponent } from './components/grupos-list/grupos-list.compon
     TipoCListComponent,
     AddGruposComponent,
     GruposDetailsComponent,
-    GruposListComponent
+    GruposListComponent,
+    AddcursosComponent,
+    CursosDetailsComponent,
+    CursosListComponent
   ],
   imports: [
     BrowserModule,

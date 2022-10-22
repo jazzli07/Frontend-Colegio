@@ -1,0 +1,70 @@
+<div *ngIf="viewMode; else editable">
+    <div *ngIf="currentCurso.id_curso">
+      <h4>cursos</h4>
+      <div>
+        <label><strong>Nombre:</strong></label> {{ currentCurso.nombre }}
+      </div>
+      <div>
+        <label><strong>Descripcion:</strong></label>
+        {{ currentCurso.descripcion }}
+      </div>
+  
+      <a
+      class="badge badge-warning"
+      routerLink="/cursos/{{ currentCurso.id_curso }}"
+    >
+        Edit
+      </a>
+    </div>
+  
+    <div *ngIf="!currentCurso">
+      <br />
+      <p>Please click on a Curso...</p>
+    </div>
+  </div>
+  
+  <ng-template #editable>
+    <div *ngIf="currentCurso.id_curso" class="edit-form">
+      <h4>Cursos</h4>
+      <form>
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nombre"
+            [(ngModel)]="currentCurso.nombre"
+            name="nombre"
+          />
+        </div>
+        <div class="form-group">
+          <label for="descripcion">Descripcion</label>
+          <input
+            type="text"
+            class="form-control"
+            id="descripcion"
+            [(ngModel)]="currentCurso.descripcion"
+            name="descripcion"
+          />
+        </div>
+      </form>
+  
+      <button class="badge badge-danger mr-2" (click)="deleteCursos()">
+        Delete
+      </button>
+  
+      <button
+        type="submit"
+        class="badge badge-success mb-2"
+        (click)="updateCursos()"
+      >
+        Update
+      </button>
+      <p>{{ message }}</p>
+    </div>
+  
+    <div *ngIf="!currentCurso.id_curso">
+      <br />
+      <p>Cannot access this Cursos...</p>
+    </div>
+  </ng-template>
