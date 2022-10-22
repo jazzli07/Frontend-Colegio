@@ -42,17 +42,6 @@ export class PersonasListComponent implements OnInit {
     this.currentIndex = index;
   }
 
-  removeAllPersonas(): void {
-    this.PersonasService.deleteAll()
-      .subscribe({
-        next: (res) => {
-          console.log(res);
-          this.refreshList();
-        },
-        error: (e) => console.error(e)
-      });
-  }
-
   searchNombre(): void {
     this.currentPersona = {};
     this.currentIndex = -1;

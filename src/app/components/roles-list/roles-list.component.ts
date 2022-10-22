@@ -43,17 +43,6 @@ export class RolesListComponent implements OnInit {
     this.currentIndex = index;
   }
 
-  removeAllRoles(): void {
-    this.RolesService.deleteAll()
-      .subscribe({
-        next: (res) => {
-          console.log(res);
-          this.refreshList();
-        },
-        error: (e) => console.error(e)
-      });
-  }
-
   searchNombre(): void {
     this.currentRol = {};
     this.currentIndex = -1;
