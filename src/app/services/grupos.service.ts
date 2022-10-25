@@ -37,6 +37,6 @@ export class GruposService {
   }
 
   findByNombre(grupo: any): Observable<Grupos[]> {
-    return this.http.get<Grupos[]>(`${baseUrl}?nombre=${grupo}`);
+    return this.http.get<Grupos[]>(`${baseUrl}?grupo=${grupo}`);
   }
 } 

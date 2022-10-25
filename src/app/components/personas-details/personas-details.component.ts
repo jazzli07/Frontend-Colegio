@@ -49,6 +49,33 @@ export class PersonasDetailsComponent implements OnInit {
       });
   }
 
+  updatePublished(status: boolean): void {
+    const data = {
+      cui: this.currentPersona.cui,
+      correo: this.currentPersona.correo,
+      nombre: this.currentPersona.nombres,
+      apellidos: this.currentPersona.apellidos,
+      nombreCompleto: this.currentPersona.nombreCompleto,
+      genero: this.currentPersona.genero,
+      fechaNacimiento: this.currentPersona.fechaNacimiento,
+      edad: this.currentPersona.edad,
+      direccion: this.currentPersona.direccion,
+      published: status
+    };
+
+    this.message = '';
+
+    this.PersonasService.update(this.currentPersona.id_persona, data)
+      .subscribe({
+        next: (res) => {
+          console.log(res);
+          this.currentPersona.esta_activo = status;
+          this.message = res.message ? res.message : 'El estado ha sido modificado exitosamente!';
+        },
+        error: (e) => console.error(e)
+      });
+  }
+
   updatePersonas(): void {
     this.message = '';
 

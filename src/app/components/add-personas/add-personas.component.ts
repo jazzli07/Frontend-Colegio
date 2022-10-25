@@ -38,8 +38,8 @@ export class AddPersonasComponent implements OnInit {
       nombreCompleto: this.personas.nombreCompleto,
       genero: this.personas.genero,
       fechaNacimiento: this.personas.fechaNacimiento,
-      direccion: this.personas.direccion
-      //esta_activo: this.personas.esta_activo
+      direccion: this.personas.direccion,
+      esta_activo: this.personas.esta_activo
     };
 
     this.personasService.create(data)

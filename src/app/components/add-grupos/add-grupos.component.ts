@@ -21,7 +21,7 @@ export class AddGruposComponent implements OnInit {
 
   saveGrupo(): void {
     const data = {
-      nombre: this.grupos.grupo,
+      grupo: this.grupos.grupo, 
     };
 
     this.gruposService.create(data)

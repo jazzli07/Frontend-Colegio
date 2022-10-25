@@ -8,3 +8,5 @@
     font-family: 'Helvetica', sans-serif; /*tipografía texto*/
     border-radius: 50px; /*bordes redondos*/
     }
+
+    list{text-align:left;max-width:750px;margin:auto;}

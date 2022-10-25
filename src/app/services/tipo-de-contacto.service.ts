@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { TiposDeContactos } from '../models/tipos-de-contactos.model';
 
-const baseUrl = 'http://localhost:3000/tipos_de_contactos';
+const baseUrl = 'http://localhost:3000/tipos-de-contacto';
 
 @Injectable({
   providedIn: 'root'

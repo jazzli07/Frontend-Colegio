@@ -33,13 +33,13 @@
         {{ currentPersona.direccion }}
       </div>
       <div>
-        <label><strong>Esta Activo:</strong></label>
+        <label><strong>Estado Activo:</strong></label>
         {{ currentPersona.esta_activo }}
       </div>
   
       <a
         class="badge badge-warning"
-        routerLink="/personas/{{ currentPersona.id_persona}}"
+        routerLink="/personas/{{ currentPersona.id_persona}}" 
       >
         Edit
       </a>
@@ -191,18 +191,27 @@
                                                                             <div *ngIf="currentPersona.id_persona" class="edit-form">
                                                                               <h4>Esta Activo</h4>
                                                                               <form>
-                                                                                <div class="form-group">
-                                                                                  <label for="esta_activo">esta_activo</label>
-                                                                                  <input
-                                                                                    type="text"
-                                                                                    class="form-control"
-                                                                                    id="esta_activo"
-                                                                                    [(ngModel)]="currentPersona.esta_activo"
-                                                                                    name="esta_activo"
-                                                                                  />
+                                                                                <div>
+                                                                                  <label><strong>Status:</strong></label>
+                                                                                  {{ currentPersona.esta_activo ? "Estado" : "Pendiente" }}
                                                                                 </div>
 
       </form>
+
+      <button
+      class="badge badge-primary mr-2"
+      *ngIf="currentPersona.esta_activo"
+      (click)="updatePublished(false)"
+    >
+      UnPublish
+    </button>
+    <button
+      *ngIf="!currentPersona.esta_activo"
+      class="badge badge-primary mr-2"
+      (click)="updatePublished(true)"
+    >
+      Publish
+    </button>
   
       <button class="badge badge-danger mr-2" (click)="deletePersona()">
         Delete
